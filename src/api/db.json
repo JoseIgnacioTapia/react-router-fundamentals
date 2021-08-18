@@ -36,7 +36,7 @@
       "id": 1624653782871
     },
     {
-      "name": "El Cid",
+      "name": "Caballero El Cid",
       "constellation": "Capricornio",
       "id": 1624654708373
     },
@@ -44,6 +44,11 @@
       "name": "Kamus",
       "constellation": "Acuario",
       "id": 1629314518468
+    },
+    {
+      "name": "Afrodita",
+      "constellation": "Piscis",
+      "id": 1629316264822
     }
   ]
 }
