@@ -49,6 +49,12 @@ const SongSearch = () => {
     setSearch(data);
   };
 
+  const handleSaveSong = () => {
+    alert('Salvando canción en favoritos');
+  };
+
+  const handleDeleteSong = id => {};
+
   return (
     <div>
       <article className="grid-1-3"></article>
@@ -61,7 +67,10 @@ const SongSearch = () => {
         <article className="grid-1-3">
           <Switch>
             <Route exact path="/">
-              <SongForm handleSearch={handleSearch} />
+              <SongForm
+                handleSearch={handleSearch}
+                handleSaveSong={handleSaveSong}
+              />
               <h2>Tabla de Canciones</h2>
               {search && !loading && (
                 <SongDetails search={search} lyric={lyric} bio={bio} />
