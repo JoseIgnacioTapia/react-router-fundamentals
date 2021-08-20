@@ -5,6 +5,7 @@ import SongDetails from './SongDetails';
 import Loader from './Loader';
 import { HashRouter, Link, Route, Switch } from 'react-router-dom';
 import Error404 from '../pages/Error404';
+import SongTable from './SongTable';
 
 let mySongsInit = JSON.parse(localStorage.getItem('mySongs')) || []; // Condicional
 
@@ -57,21 +58,23 @@ const SongSearch = () => {
 
   return (
     <div>
-      <article className="grid-1-3"></article>
       <HashRouter basename="canciones">
         <header>
           <h2>Song Search</h2>
           <Link to="/">Home</Link>
         </header>
         {loading && <Loader />} {/*Operador cortocircuito AND*/}
-        <article className="grid-1-3">
+        <article className="grid-1-2">
           <Switch>
             <Route exact path="/">
               <SongForm
                 handleSearch={handleSearch}
                 handleSaveSong={handleSaveSong}
               />
-              <h2>Tabla de Canciones</h2>
+              <SongTable
+                mySongs={mySongs}
+                handleDeleteSong={handleDeleteSong}
+              />
               {search && !loading && (
                 <SongDetails search={search} lyric={lyric} bio={bio} />
               )}
